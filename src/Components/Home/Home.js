@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div>
-            <h2 className='text-2xl font-bold uppercase'>This is from Home</h2>
-            <Link to={'/report'}>
-                <button className="btn btn-info">Report</button>
-            </Link>
+        <div className='flex justify-center'>
+            <div>
+                <h2 className='text-2xl font-bold uppercase'>Welcome to the Product Report Management System (PRMS) Web App</h2>
+                <Link to={'/report'}>
+                    <button className="btn btn-info btn-sm mt-4">Report</button>
+                </Link>
+            </div>
         </div>
     );
 };
