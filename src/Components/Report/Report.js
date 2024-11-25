@@ -27,10 +27,10 @@ const Report = () => {
                 <h2 className='text-2xl font-bold uppercase'>Report List</h2>
                 <div>
                     <Link to={'/'}>
-                        <button className="btn btn-sm btn-error">Home</button>
+                        <button className="btn btn-sm btn-error text-white font-bold">Home</button>
                     </Link>
                     <Link to={'/addReport'}>
-                        <button className="btn btn-sm btn-info ml-2">Create New Report</button>
+                        <button className="btn btn-sm btn-info text-white font-bold ml-2">Create New Report</button>
                     </Link>
                 </div>
             </div>
@@ -54,7 +54,7 @@ const Report = () => {
                                 <td>{report?.hourNumber}</td>
                                 <td>{report?.number}</td>
                                 <td>
-                                    <button onClick={() => handleDeleteReport(report?._id)} className="btn btn-accent btn-sm">DELETE</button>
+                                    <button onClick={() => handleDeleteReport(report?._id)} className="btn btn-accent btn-sm text-white font-bold">DELETE</button>
                                 </td>
                             </tr>)
                         }
