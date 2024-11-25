@@ -11,7 +11,6 @@ const AddReport = () => {
         const hourNumber = form.hourNumber.value;
         const number = form.number.value;
         const reportData = { floorNumber, hourNumber, number };
-        console.log(reportData)
 
         // add report to the DB via server
         fetch('http://localhost:5000/reports', {
@@ -22,7 +21,7 @@ const AddReport = () => {
             body: JSON.stringify(reportData)
         })
             .then(res => res.json())
-            .then(data => toast.success("Report added successfully!"))
+            .then(data => toast.success("Report Added Successfully!"))
     }
 
     return (

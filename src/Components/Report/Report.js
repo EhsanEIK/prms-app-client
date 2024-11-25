@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const Report = () => {
@@ -8,6 +9,15 @@ const Report = () => {
             .then(res => res.json())
             .then(data => setReports(data))
     }, [])
+
+    // handle Delete Button for deleting report from DB
+    const handleDeleteReport = id => {
+        fetch(`http://localhost:5000/reports/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => toast.success("Report Deleted Successfully!"))
+    }
 
     let i = 1;
 
@@ -33,6 +43,7 @@ const Report = () => {
                             <th>Floor Numebr</th>
                             <th>Hour</th>
                             <th>Numebr</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,6 +53,9 @@ const Report = () => {
                                 <td>{report?.floorNumber}</td>
                                 <td>{report?.hourNumber}</td>
                                 <td>{report?.number}</td>
+                                <td>
+                                    <button onClick={() => handleDeleteReport(report?._id)} className="btn btn-accent btn-sm">DELETE</button>
+                                </td>
                             </tr>)
                         }
                     </tbody>
