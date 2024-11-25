@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const AddReport = () => {
@@ -11,6 +12,17 @@ const AddReport = () => {
         const number = form.number.value;
         const reportData = { floorNumber, hourNumber, number };
         console.log(reportData)
+
+        // add report to the DB via server
+        fetch('http://localhost:5000/reports', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reportData)
+        })
+            .then(res => res.json())
+            .then(data => toast.success("Report added successfully!"))
     }
 
     return (
