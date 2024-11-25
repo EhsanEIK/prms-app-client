@@ -37,11 +37,11 @@ const Report = () => {
                     </thead>
                     <tbody>
                         {
-                            reports.map(report => <tr className="hover">
+                            reports.map(report => <tr key={report?._id} className="hover">
                                 <th>{i++}</th>
-                                <td>{report.floorNumber}</td>
-                                <td>{report.hourNumber}</td>
-                                <td>{report.number}</td>
+                                <td>{report?.floorNumber}</td>
+                                <td>{report?.hourNumber}</td>
+                                <td>{report?.number}</td>
                             </tr>)
                         }
                     </tbody>

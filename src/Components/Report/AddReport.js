@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const AddReport = () => {
-    const handleSubmit = event => {
+    const handleAddReport = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -27,7 +27,7 @@ const AddReport = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className='flex justify-center'>
+            <form onSubmit={handleAddReport} className='flex justify-center'>
                 <div>
                     <h2 className='text-2xl font-bold uppercase text-center'>Create New Report</h2>
                     <select name='floorNumber' className="select select-info w-full max-w-xs mt-5">
