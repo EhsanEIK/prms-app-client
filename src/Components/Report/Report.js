@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Report = () => {
+    const [reports, setReports] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/reports')
+            .then(res => res.json())
+            .then(data => setReports(data))
+    }, [])
+
+    const i = 1;
+
     return (
         <div>
             <div className='flex justify-between mb-5'>
@@ -20,19 +29,21 @@ const Report = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>SL.</th>
                             <th>Floor Numebr</th>
                             <th>Hour</th>
                             <th>Numebr</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="hover">
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                        </tr>
+                        {
+                            reports.map(report => <tr className="hover">
+                                <th>{i++}</th>
+                                <td>{report.floorNumber}</td>
+                                <td>{report.hourNumber}</td>
+                                <td>{report.number}</td>
+                            </tr>)
+                        }
                     </tbody>
                 </table>
             </div>
