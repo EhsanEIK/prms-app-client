@@ -3,8 +3,6 @@ import Home from "../Components/Home/Home";
 import Report from "../Components/Report/Report";
 import AddReport from "../Components/Report/AddReport";
 import Main from "../Components/Layout/Main";
-import Signin from "../Components/Signin/Signin";
-import Signup from "../Components/Signup/Signup";
 
 export const router = createBrowserRouter([
     {
@@ -24,13 +22,5 @@ export const router = createBrowserRouter([
                 element: <AddReport></AddReport>
             },
         ]
-    },
-    {
-        path: '/signup',
-        element: <Signup></Signup>
-    },
-    {
-        path: '/signin',
-        element: <Signin></Signin>
-    },
+    }
 ])
