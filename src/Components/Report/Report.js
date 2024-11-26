@@ -5,15 +5,24 @@ import { Link } from 'react-router-dom';
 const Report = () => {
     const [reports, setReports] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reports')
+        fetch('https://prms-app-server-lcape5tcz-ehsaneiks-projects.vercel.app/reports', {
+            mode: 'no-cors',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            }
+        })
             .then(res => res.json())
             .then(data => setReports(data))
     }, [])
 
     // handle Delete Button for deleting report from DB
     const handleDeleteReport = id => {
-        fetch(`http://localhost:5000/reports/${id}`, {
-            method: 'DELETE'
+        fetch(`https://prms-app-server-lcape5tcz-ehsaneiks-projects.vercel.app/reports/${id}`, {
+            mode: 'no-cors',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+            method: 'DELETE',
         })
             .then(res => res.json())
             .then(data => toast.success("Report Deleted Successfully!"))

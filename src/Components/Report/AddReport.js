@@ -13,7 +13,7 @@ const AddReport = () => {
         const reportData = { floorNumber, hourNumber, number };
 
         // add report to the DB via server
-        fetch('http://localhost:5000/reports', {
+        fetch('https://prms-app-server-lcape5tcz-ehsaneiks-projects.vercel.app/reports', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
