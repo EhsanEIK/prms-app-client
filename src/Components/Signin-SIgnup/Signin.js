@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Signup = () => {
+const Signin = () => {
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left ml-5">
-                    <h1 className="text-5xl font-bold">Sign Up!</h1>
+                    <h1 className="text-5xl font-bold">Sign In!</h1>
                     <p className="py-6">
                         Welcome to the Product Report Management System (PRMS) Web App
                     </p>
@@ -29,11 +29,11 @@ const Signup = () => {
                             </label> */}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-success text-white font-bold">Signup</button>
+                            <button className="btn btn-primary text-white font-bold">Login</button>
                         </div>
                         <label className="mt-1">
-                            <p className="label-text-alt text-sm text-center">Have account?
-                                <Link to={'/signin'} className="link link-hover text-blue-600 font-bold ml-1">Login Now!</Link>
+                            <p className="label-text-alt text-sm text-center">No account!
+                                <Link to={'/signup'} className="link link-hover text-green-600 font-bold ml-1">Create Now</Link>
                             </p>
                         </label>
                     </form>
@@ -43,4 +43,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default Signin;

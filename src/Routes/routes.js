@@ -4,6 +4,7 @@ import Report from "../Components/Report/Report";
 import AddReport from "../Components/Report/AddReport";
 import Main from "../Components/Layout/Main";
 import Signup from "../Components/Signin-SIgnup/Signup";
+import Signin from "../Components/Signin-SIgnup/Signin";
 
 export const router = createBrowserRouter([
     {
@@ -27,5 +28,9 @@ export const router = createBrowserRouter([
     {
         path: '/signup',
         element: <Signup></Signup>
-    }
+    },
+    {
+        path: '/signin',
+        element: <Signin></Signin>
+    },
 ])
