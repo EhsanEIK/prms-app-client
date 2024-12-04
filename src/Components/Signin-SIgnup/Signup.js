@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 const Signup = () => {
     const { createUser } = useContext(AuthContext);
 
+    // sign up handler
     const handleSignup = event => {
         event.preventDefault();
 
