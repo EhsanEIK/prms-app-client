@@ -56,7 +56,7 @@ const AddReport = () => {
                         Number
                         <input name='number' type="text" className="grow" placeholder="number" />
                     </label>
-                    <Link to={'/report'}>
+                    <Link to={'/reports'}>
                         <button className="btn btn-error btn-sm text-white font-bold">Back</button>
                     </Link>
                     <button className="btn btn-info btn-sm text-white font-bold mt-5 ml-2">Submit</button>

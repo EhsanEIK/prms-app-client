@@ -25,7 +25,7 @@ const Main = () => {
                     <h2 className="text-3xl font-bold">PRMS Web App</h2>
                 </div>
                 <div className="navbar-end">
-                    <Link to={'/report'}>
+                    <Link to={'/reports'}>
                         <button className="bg-teal-500 font-bold text-lg text-white px-5 py-1 rounded-lg hover:bg-teal-600">Report</button>
                     </Link>
                 </div>
