@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Report = () => {
     const [reports, setReports] = useState([]);
     useEffect(() => {
-        fetch('https://prms-app-server-enroztktf-ehsaneiks-projects.vercel.app/reports', {
+        fetch('http://localhost:5000/reports', {
         })
             .then(res => res.json())
             .then(data => setReports(data))
@@ -13,11 +13,25 @@ const Report = () => {
 
     // handle Delete Button for deleting report from DB
     const handleDeleteReport = id => {
-        fetch(`https://prms-app-server-enroztktf-ehsaneiks-projects.vercel.app/reports/${id}`, {
+        fetch(`http://localhost:5000/reports/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
             .then(data => toast.success("Report Deleted Successfully!"))
+    }
+
+    // function for considering the status color depends on number
+    const status = number => {
+        let colorCode = '';
+        if (number >= 80) {
+            return colorCode = 'bg-green-500';
+        }
+        else if (number >= 50 && number <= 79) {
+            return colorCode = 'bg-yellow-500';
+        }
+        else {
+            return colorCode = 'bg-red-500';
+        }
     }
 
     let i = 1;
@@ -43,7 +57,8 @@ const Report = () => {
                             <th>SL.</th>
                             <th>Floor Numebr</th>
                             <th>Hour</th>
-                            <th>Numebr</th>
+                            <th>Number</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -55,6 +70,9 @@ const Report = () => {
                                 <td>{report?.hourNumber}</td>
                                 <td>{report?.number}</td>
                                 <td>
+                                    <div className={`badge badge-sm ${status(report?.number)}`}></div>
+                                </td>
+                                <td>
                                     <button onClick={() => handleDeleteReport(report?._id)} className="btn btn-accent btn-sm text-white font-bold">DELETE</button>
                                 </td>
                             </tr>)
@@ -62,7 +80,7 @@ const Report = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 
