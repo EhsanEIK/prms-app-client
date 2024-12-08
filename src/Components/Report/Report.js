@@ -70,7 +70,7 @@ const Report = () => {
                                 <td>{report?.hourNumber}</td>
                                 <td>{report?.number}</td>
                                 <td>
-                                    <div className={`badge badge-sm ${status(report?.number)}`}></div>
+                                    <div className={`h-5 w-8 rounded-sm ${status(report?.number)}`}></div>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteReport(report?._id)} className="btn btn-accent btn-sm text-white font-bold">DELETE</button>
